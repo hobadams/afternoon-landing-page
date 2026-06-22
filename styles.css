@@ -226,37 +226,3 @@ body {
   outline-offset: 3px;
   border-radius: 4px;
 }
-
-/* Entrance animation */
-@media (prefers-reduced-motion: no-preference) {
-  .card > * {
-    opacity: 0;
-    transform: translateY(14px);
-    animation: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
-  }
-  .card > *:nth-child(1) {
-    animation-delay: 0.05s;
-  }
-  .card > *:nth-child(2) {
-    animation-delay: 0.16s;
-  }
-  .card > *:nth-child(3) {
-    animation-delay: 0.27s;
-  }
-  .card > *:nth-child(4) {
-    animation-delay: 0.38s;
-  }
-  .card > *:nth-child(5) {
-    animation-delay: 0.49s;
-  }
-  .card > *:nth-child(6) {
-    animation-delay: 0.6s;
-  }
-
-  @keyframes rise {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-}
