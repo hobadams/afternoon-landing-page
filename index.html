@@ -55,6 +55,13 @@
       rel="stylesheet"
     />
 
+    <!-- Warm the connection to the shop (Pepper You) so the CTA click starts
+         instantly. Connection-only on purpose: we deliberately do NOT prefetch
+         or prerender their page (cross-origin caching makes it ineffective and
+         it would fire their analytics for every visitor). -->
+    <link rel="preconnect" href="https://pepperyou.co.uk" />
+    <link rel="dns-prefetch" href="https://pepperyou.co.uk" />
+
     <link rel="stylesheet" href="styles.css" />
 
     <!-- Mobile image option A: full-bleed banner on top -->
