@@ -41,12 +41,15 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+.layout {
+  min-height: 100svh;
+}
+
 .page {
   min-height: 100svh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   padding: clamp(1.5rem, 5vw, 4rem);
   text-align: center;
 }
@@ -57,6 +60,23 @@ body {
   align-items: center;
   max-width: 34rem;
   width: 100%;
+  margin: auto 0;
+}
+
+/* Image panel. Hidden by default; shown in the desktop split and via the
+   per-page mobile options. The image always covers its container. */
+.hero {
+  display: none;
+  position: relative;
+}
+
+.hero img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* Logo wordmark */
@@ -94,8 +114,8 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 50px;
-  padding: 0 36px;
+  text-align: center;
+  padding: 0.95rem 2rem;
   background-color: var(--button-bg);
   color: var(--button-ink);
   font-family: var(--font-body);
@@ -150,12 +170,21 @@ body {
 }
 
 .footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  width: 100%;
   padding: 1.25rem;
   text-align: center;
+}
+
+/* Desktop: 50/50 split — content left (centered), image right (full-bleed cover) */
+@media (min-width: 64rem) {
+  .layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero {
+    display: block;
+  }
 }
 
 .footer-line {

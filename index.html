@@ -57,6 +57,26 @@
 
     <link rel="stylesheet" href="styles.css" />
 
+    <!-- Mobile image option A: full-bleed banner on top -->
+    <style>
+      @media (max-width: 63.999rem) {
+        .layout {
+          display: flex;
+          flex-direction: column;
+        }
+        .hero {
+          display: block;
+          order: -1;
+          flex: 0 0 auto;
+          height: clamp(240px, 42vh, 360px);
+        }
+        .page {
+          flex: 1 1 auto;
+          min-height: 0;
+        }
+      }
+    </style>
+
     <!-- Structured data: brand organisation -->
     <script type="application/ld+json">
       {
@@ -96,7 +116,8 @@
   </head>
 
   <body>
-    <main class="page">
+    <div class="layout">
+      <main class="page">
       <div class="card">
         <h1 class="logo" aria-label="Afternoon Studio">
           <img src="assets/logo.svg" alt="Afternoon Studio" width="349" height="103" />
@@ -110,13 +131,8 @@
         </p>
 
         <a class="shop-button" href="https://pepperyou.co.uk/collections/brand-afternoon-studio">
-          Shop the Collection
+          Stocked Exclusively at Pepper&nbsp;You
         </a>
-
-        <p class="stocked-at">
-          Stocked at
-          <a href="https://pepperyou.co.uk/collections/brand-afternoon-studio">Pepper&nbsp;You</a>
-        </p>
       </div>
 
       <footer class="footer">
@@ -149,7 +165,12 @@
           </a>
         </p>
       </footer>
-    </main>
+      </main>
+
+      <aside class="hero">
+        <img src="assets/hero.jpg" alt="Afternoon Studio handcrafted jewellery" />
+      </aside>
+    </div>
 
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
