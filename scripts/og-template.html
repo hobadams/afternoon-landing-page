@@ -1,0 +1,88 @@
+<!doctype html>
+<!--
+  Source template for assets/og-image.jpg (1200×630).
+  To regenerate: serve the project root and screenshot this page at 1200×630.
+  See README.md → "Regenerating the OG image".
+-->
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400&family=Jost:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+      }
+      .og {
+        width: 1200px;
+        height: 630px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #f3ece1;
+        background-image: radial-gradient(115% 80% at 50% 0%, #faf3e7 0%, #f3ece1 60%);
+        color: #3a312a;
+        font-family: "Jost", system-ui, sans-serif;
+        position: relative;
+      }
+      .frame {
+        position: absolute;
+        inset: 40px;
+        border: 1px solid rgba(58, 49, 42, 0.18);
+        border-radius: 10px;
+      }
+      .logo {
+        width: 560px;
+        height: auto;
+        display: block;
+      }
+      .tagline {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 46px;
+        line-height: 1.1;
+        margin-top: 30px;
+        color: #3a312a;
+      }
+      .meta {
+        margin-top: 44px;
+        font-size: 17px;
+        letter-spacing: 0.26em;
+        text-transform: uppercase;
+        color: #8a7c6d;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      .dot {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: #ac7a55;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="og">
+      <div class="frame"></div>
+      <img class="logo" src="/assets/logo.svg" alt="Afternoon Studio" />
+      <p class="tagline">Inspired by nature, grounded in craft.</p>
+      <p class="meta">Handcrafted Jewellery <span class="dot"></span> Shop at Pepper You</p>
+    </div>
+  </body>
+</html>

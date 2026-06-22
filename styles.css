@@ -1,0 +1,213 @@
+:root {
+  --bg: #f3ece1;
+  --bg-glow: #faf3e7;
+  --ink: #3a312a;
+  --muted: #756859;
+  --accent: #ac7a55;
+  --accent-hover: #946542;
+  --accent-ink: #fbf6ee;
+  --hairline: rgba(58, 49, 42, 0.16);
+
+  --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-body: "Jost", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100svh;
+  background-color: var(--bg);
+  background-image: radial-gradient(120% 90% at 50% 0%, var(--bg-glow) 0%, var(--bg) 58%);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.page {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1.5rem, 5vw, 4rem);
+  text-align: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 34rem;
+  width: 100%;
+}
+
+/* Logo wordmark */
+.logo {
+  margin: 0 0 clamp(1.5rem, 4vw, 2.25rem);
+  width: 100%;
+}
+
+.logo img {
+  display: block;
+  width: clamp(220px, 62%, 320px);
+  height: auto;
+  margin: 0 auto;
+}
+
+.tagline {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-style: italic;
+  font-size: clamp(1.5rem, 4.5vw, 2.1rem);
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  margin: 0 0 1rem;
+  color: var(--ink);
+}
+
+.intro {
+  max-width: 30rem;
+  margin: 0 auto clamp(1.75rem, 5vw, 2.5rem);
+  font-size: 0.98rem;
+  color: var(--muted);
+}
+
+.shop-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0 2.25rem;
+  background-color: var(--accent);
+  color: var(--accent-ink);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.82rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 999px;
+  transition:
+    background-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.shop-button:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.shop-button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.stocked-at {
+  margin: 1.1rem 0 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.stocked-at span {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+/* Social */
+.social {
+  margin-top: clamp(2rem, 6vw, 2.75rem);
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  color: var(--ink);
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.social-link img {
+  width: 22px;
+  height: 22px;
+}
+
+.social-link:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.social-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+/* Entrance animation */
+@media (prefers-reduced-motion: no-preference) {
+  .card > * {
+    opacity: 0;
+    transform: translateY(14px);
+    animation: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+  }
+  .card > *:nth-child(1) {
+    animation-delay: 0.05s;
+  }
+  .card > *:nth-child(2) {
+    animation-delay: 0.16s;
+  }
+  .card > *:nth-child(3) {
+    animation-delay: 0.27s;
+  }
+  .card > *:nth-child(4) {
+    animation-delay: 0.38s;
+  }
+  .card > *:nth-child(5) {
+    animation-delay: 0.49s;
+  }
+  .card > *:nth-child(6) {
+    animation-delay: 0.6s;
+  }
+
+  @keyframes rise {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
